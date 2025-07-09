@@ -149,7 +149,7 @@ export default function TransactionsPage() {
       ["Date", "Description", "Category", "Type", "Amount"].join(","),
       ...filteredTransactions.map((t: Transaction) =>
         [
-          new Date(t.date).toLocaleDateString(),
+          t.date.slice(0,10),
           `"${t.description}"`, // Wrap in quotes to handle commas
           t.category,
           t.type,
